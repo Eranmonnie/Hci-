@@ -4,7 +4,7 @@ import InputField from "../components/inputField";
 const Login = () => {
   return (
     <div className=" h-[95vh] flex items-center justify-center bg-[]">
-      <div className="w-[355px] h-[400px]  md:w-[753px] md:h-[466px] flex flex-col md:flex-row">
+      <div className="w-[355px] h-[400px]  md:w-[763px] md:h-[500px] flex flex-col md:flex-row">
         <div className=" w-full md:w-[60%]  h-full bg-[#D3DDE9] rounded-l-2xl p-8 rounded-r-2xl md:rounded-r-[0px]">
           <h3 className="text-xl text-[#140DBD]">BUHREC</h3>
           <div className="flex flex-col justify-center items-center mt-7 md:mt-20">
@@ -13,8 +13,8 @@ const Login = () => {
                 Sign In to Your Acount
               </h3>
               <div className="flex flex-col gap-5">
-                <InputField thing={`email`} />
-                <InputField thing={`password`} />
+                <InputField thing={`email`}placeholder="favourakinlesi@gmail.com" />
+                <InputField thing={`password`} placeholder="password" />
               </div>
               <h5 className="text-right text-[11px] mt-1">forgot password ?</h5>
 
