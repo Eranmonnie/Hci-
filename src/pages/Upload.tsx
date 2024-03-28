@@ -1,10 +1,12 @@
 import FileInput from "../components/fileInput";
 
 const Upload = () => {
+
   const handleFileChange = (file: { files: any[] }) => {
     console.log("Selected file:", file);
     // Handle the selected file here, such as uploading it to a server
   };
+  
   return (
     <>
       <div className="bg-[#D3DDE9] h-screen">
