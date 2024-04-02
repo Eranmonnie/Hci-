@@ -1,15 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Upload from "./pages/Upload";
+import Dashboard from "./pages/Dashboard";
 // import { ModalProvider } from "./components/providers/modal-providers";
 
 function App() {
   return (
     <>
+    <div className="h-full">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/upload" element={<Upload />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
+    </div>
     </>
   );
 }

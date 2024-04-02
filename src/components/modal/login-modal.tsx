@@ -1,6 +1,5 @@
 import { useState } from "react";
-import InputField from "../inputField";
-import { Link } from "react-router-dom";
+import InputField from "@/components/inputField";
 import { useModal } from "@/hooks/use-modal-store";
 import { X } from "lucide-react";
 
@@ -50,10 +49,10 @@ const LoginModal = () => {
             </button>
           </div>
           <div className="flex flex-col justify-center items-center mt-7 md:mt-14">
-            <form onSubmit={handleSubmit} className="w-[70] md:w-[65%]">
-              <div className="bg-[#140DBD] py-7 px-9 rounded-2xl">
+            <form onSubmit={handleSubmit} className="w-[67%] ">
+              <div className="bg-[#140DBD] py-7 px-9 rounded-2xl w-[400px]">
                 <h3 className="text-[20px] text-center md:text-[23px] text-white font-bold mb-5">
-                  Sign In to Your Acount
+                  Login to Your Acount
                 </h3>
                 <div className="flex flex-col gap-5">
                   <InputField

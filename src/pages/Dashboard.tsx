@@ -1,8 +1,12 @@
 import { useState } from "react";
+import sideNav from "@/components/sideNav";
 import FileInput from "../components/fileInput";
 import InputField from "../components/inputField";
+import SideNav from "@/components/sideNav";
+import Nav from "@/components/nav";
+import DataTable from "@/components/dataTable";
 
-const Upload = () => {
+const Dashboard = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -23,7 +27,16 @@ const Upload = () => {
 
   return (
     <>
-      <div className="bg-[#D3DDE9] h-screen">
+      <div className="w-full h-full">
+        <Nav />
+        <div className="flex h-full">
+          <SideNav />
+          <div className="w-full">
+            <DataTable />
+          </div>
+        </div>
+      </div>
+      {/* <div className="bg-[#D3DDE9] h-screen">
         <nav className="flex justify-between bg-[#D3DDE9] py-1 pl-7 mb-10 border-b border-b-[#140DBD]">
           <span className="text-2xl text-[#140DBD] font-bold">BUHREC</span>
         </nav>
@@ -73,15 +86,15 @@ const Upload = () => {
                     handleChange("assignment", value)
                   }
                 />
-                <h6 className=" text-[11px] text-center">UPLOAD DOCUMENT</h6>
+                <h6 className=" text-[11px] text-center">Dashboard DOCUMENT</h6>
               </div>
           
             
           </form>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default Upload;
+export default Dashboard;

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import DropDown from "../dropDown";
+import DropDown from "@/components/dropDown";
 import InputField from "../inputField";
-// import { Link } from "react-router-dom";
 import { useModal } from "@/hooks/use-modal-store";
 import { X } from "lucide-react";
 const SignupModal = () => {
@@ -49,7 +48,7 @@ const SignupModal = () => {
 
   return (
     <dialog open={isModalopen}>
-      <div className="w-[200px] h-[350px] md:w-[650px] md:h-[500px]  fixed inset-0 mx-auto my-20 ">
+      <div className="w-[200px] h-[350px] md:w-[650px] md:h-[520px]  fixed inset-0 mx-auto my-20 ">
         <div className=" w-full h-full bg-[#D3DDE9] rounded-2xl p-7 ">
           <div className="flex justify-between">
             <h3 className="text-xl text-[#140DBD]">BUHREC</h3>
@@ -61,7 +60,7 @@ const SignupModal = () => {
               <X className="w-4 h-4" />
             </button>
           </div>
-          <div className="flex flex-col justify-center items-center mt-2 md:mt-0">
+          <div className="flex flex-col justify-center items-center mt-2 md:mt-0 ">
             <form onSubmit={handleSubmit} className=" md:w-[85%]">
               <h3 className="text-[20px] text-center md:text-[23px] text-[#140DBD] font-bold mb-2">
                 Sign Up

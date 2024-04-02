@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import SignupModal from "../modal/sign-up-modal";
-import LoginModal from "../modal/login-modal";
+import SignupModal from "@/components/modal/sign-up-modal";
+import LoginModal from "@/components/modal/login-modal";
 
 
 
