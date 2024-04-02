@@ -1,40 +1,56 @@
+// import { useState } from "react";
+import { ModalProvider } from "@/components/providers/modal-providers";
 import { AboutComp } from "../components/aboutComp";
 import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
+import { useModal } from "@/hooks/use-modal-store";
+
 
 const Home = () => {
+  const { isOpen, type } = useModal();
+
   return (
     <>
-      <div className="bg-[]">
+      <div className=" ">
+
+      {isOpen && type == "signup" ? (
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+        ):""}
+
+      {isOpen && type == "login" ? (
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+        ):""}
         <Nav />
-        <div className="bg-[#140DBD] pt-20 pb-10 px-[10%] flex justify-between h-[580px] border-t border-t-[#D3DDE9]">
+        
+        <ModalProvider />
+        
+        <div className="w-full bg-[#140DBD] pt-20 pb-10 px-[10%] flex justify-between h-[580px] border-t border-t-[#D3DDE9]">
           <div className=" pt-14">
             <div className=" mb-4">
               <span className="text-5xl text-white font-bold">WELCOME TO </span>
               <span className="text-5xl font-bold">BUHREC</span>
             </div>
 
-            <p className=" w-96 text-[20px] text-white mb-9">
+            <p className=" text-[20px] text-white mb-9">
               Your site for marking your proposal papers and getting accurate
               corrections
             </p>
 
             <button className="bg-white border-none px-5 py-1.5 rounded-lg flex items-center justify-center">
-              <span className="text-[14px] text-[#140DBD]">
-                SUBMIT A PROPOSAL
-              </span>
+              <Link to={`/upload`}>
+                <span className="text-[14px] text-[#140DBD]">
+                  SUBMIT A PROPOSAL
+                </span>
+              </Link>
             </button>
           </div>
 
           <div className="hidden md:inline">
-            <img src="src/assets/landing.png" alt="" />
+            <img src="src/assets/landing.png" alt="image" />
           </div>
         </div>
 
-        {/* <div className="flex justify-center items-center h-screen absolute top-0 z-[-1] bg-[#D3DDE9]">
-          <img src="src/assets/circle.svg" alt="circle" />
-        </div>  remove semicircle*/}
-
-        <div className=" px-20  bg-[#D3DDE9] pb-20">
+        <div className=" px-10  bg-[#D3DDE9] pb-20">
           <h3 className="text-center text-[#140DBD] text-2xl font-semibold mb-5">
             ABOUT
           </h3>
@@ -78,8 +94,9 @@ const Home = () => {
             Viverra maecenas accumsan lacus vel facilisis volutpat est velit`}
               />
             </div>
-
           </div>
+
+          {/*  */}
 
           <div className="flex items-center justify-center">
             <div className="px-8 pt-2 pb-5 w-[400px] bg-white rounded-xl">
@@ -102,7 +119,7 @@ const Home = () => {
               </form>
             </div>
           </div>
-
+          {/*  */}
         </div>
 
         <div className="w-full h-48 bg-[#140DBD]"></div>

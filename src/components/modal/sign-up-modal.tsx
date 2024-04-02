@@ -1,7 +1,24 @@
 import { useState } from "react";
-import DropDown from "../components/dropDown";
-import InputField from "../components/inputField";
-const Signup = () => {
+import DropDown from "../dropDown";
+import InputField from "../inputField";
+// import { Link } from "react-router-dom";
+import { useModal } from "@/hooks/use-modal-store";
+import { X } from "lucide-react";
+const SignupModal = () => {
+  const { isOpen, onClose, type } = useModal();
+  const isModalopen = isOpen && type == "signup";
+
+  const handelClose = () => {
+    setFormData({
+      fullname: "",
+      email: "",
+      password: "",
+      Programme: "programme",
+      Education: "Education",
+    });
+    onClose();
+  };
+
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -31,10 +48,19 @@ const Signup = () => {
   };
 
   return (
-    <div className=" h-[95vh] flex items-center justify-center">
-      <div className="w-[355px] h-[500px] md:w-[763px] md:h-[500px] flex flex-col md:flex-row">
-        <div className=" w-full md:w-[60%]  h-full bg-[#D3DDE9] rounded-l-2xl p-7 rounded-r-2xl md:rounded-r-[0px]">
-          <h3 className="text-xl text-[#140DBD]">BUHREC</h3>
+    <dialog open={isModalopen}>
+      <div className="w-[200px] h-[350px] md:w-[650px] md:h-[500px]  fixed inset-0 mx-auto my-20 ">
+        <div className=" w-full h-full bg-[#D3DDE9] rounded-2xl p-7 ">
+          <div className="flex justify-between">
+            <h3 className="text-xl text-[#140DBD]">BUHREC</h3>
+            <button
+              onClick={handelClose}
+              className="bg-rose-500 text-white p-1 rounded-full shadow-sm flex justify-center items-center w-6 h-6 "
+              type="button"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
           <div className="flex flex-col justify-center items-center mt-2 md:mt-0">
             <form onSubmit={handleSubmit} className=" md:w-[85%]">
               <h3 className="text-[20px] text-center md:text-[23px] text-[#140DBD] font-bold mb-2">
@@ -65,13 +91,16 @@ const Signup = () => {
                   value={formData.Education}
                   onChange={(value: any) => handleChange("Education", value)}
                 />
-                <InputField thing={`password`} placeholder={`password`}
-                value={formData.password}
-                onChange={(value: any) => handleChange("password", value)} />
+                <InputField
+                  thing={`password`}
+                  placeholder={`password`}
+                  value={formData.password}
+                  onChange={(value: any) => handleChange("password", value)}
+                />
 
                 <div className="flex items-center justify-center mt-2">
                   <button className="border-[2px] border-white px-10 py-1 rounded-3xl flex items-center justify-center">
-                    <span className="text-[17px] text-white flex items-center justify-center">
+                    <span className="text-[17px] text-white font-bold flex items-center justify-center">
                       Signup
                     </span>
                   </button>
@@ -80,25 +109,9 @@ const Signup = () => {
             </form>
           </div>
         </div>
-
-        <div className=" hidden md:inline w-0 md:w-[40%] h-full bg-[#140DBD] rounded-r-2xl py-40 px-7">
-          <div className="flex flex-col gap-5">
-            <h4 className="text-center text-xl text-white">
-              Already have an account? Login here
-            </h4>
-
-            <div className="flex items-center justify-center mt-2">
-              <button className="border-[2px] border-white px-10 py-1 rounded-3xl flex items-center justify-center">
-                <span className="text-[17px] text-white flex items-center justify-center">
-                  Login
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+    </dialog>
   );
 };
 
-export default Signup;
+export default SignupModal;
