@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SignupModal from "@/components/modal/sign-up-modal";
 import LoginModal from "@/components/modal/login-modal";
+import NewProjectModal from "../modal/new-project-modal";
 
 
 
@@ -16,6 +17,7 @@ export const ModalProvider = () => {
     <>
       <SignupModal/>
       <LoginModal/>
+      <NewProjectModal/>
     </>
   );
 };

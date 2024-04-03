@@ -7,17 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-import { Settings, Trash, Wrench } from "lucide-react";
+import DropdownSettings from "./dropDown-settings";
 
 const DataTable = () => {
   return (
@@ -34,8 +24,10 @@ const DataTable = () => {
             <TableHead>Payment Status</TableHead>
           </TableRow>
         </TableHeader>
+
+          {/* make loop from db for peojects done by this person  */}
+
         <TableBody>
-            {/* make loop from db for peojects done by this person  */}
           <TableRow>
             <TableCell className="font-medium">INV001</TableCell>
             <TableCell>Dr Mitami</TableCell>
@@ -43,29 +35,15 @@ const DataTable = () => {
             <TableCell>80</TableCell>
             <TableCell>$250.00</TableCell>
             <TableCell>Paid</TableCell>
+
             <TableCell>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <div className="w-5 h-5 text-blue-700">
-                    <Settings />
-                  </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent side="left">
-                  <DropdownMenuLabel>Settings</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <Wrench className="mr-2 h-4 w-4" />
-                    <span>Edit</span>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Trash className="mr-2 h-4 w-4 text-rose-500" />
-                    <span>Delete</span>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <DropdownSettings />
             </TableCell>
+
           </TableRow>
+
         </TableBody>
+        {/* loop ends */}
       </Table>
     </div>
   );
