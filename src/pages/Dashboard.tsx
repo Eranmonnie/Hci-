@@ -17,8 +17,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="w-full h-screen">
-        <nav className="flex justify-between bg-[#140DBD] py-1 pl-7 pr-[10%]">
+      <div className="w-full ">
+        <nav className="flex items-center justify-between bg-[#140DBD] py-1 pl-7 pr-[10%]">
           <Link to={`/`}>
             <span className="text-2xl text-white font-bold">BUHREC</span>
           </Link>
@@ -26,10 +26,10 @@ const Dashboard = () => {
 
         <ModalProvider />
 
-        <div className="flex h-full">
+        <div className="h-full">
           <SideNav accountType={params?.id} />
           {/* /role */}
-          <div className="w-full">
+          <div className=" pl-[72px] h-full">
             {/* //data about part of dashboard  */}
             <DataTable />
           </div>

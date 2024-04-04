@@ -24,7 +24,7 @@ const InputField: FC<inputProps> = ({ value, thing, placeholder, onChange }) => 
           />
         </div>
         <input
-          type={thing == "profile" ? `text`: thing}
+          type={thing == "dicipline"||"type" ||"profile" || "title" ? `text`: thing}
           name={thing}
           id={thing}
           placeholder={`${placeholder}`}

@@ -4,6 +4,7 @@ import InputField from "../inputField";
 import { useModal } from "@/hooks/use-modal-store";
 import { X } from "lucide-react";
 import { Dialog, DialogContent } from "../ui/dialog";
+import { Button } from "../ui/button";
 const SignupModal = () => {
   const { isOpen, onClose, type } = useModal();
   const isModalopen = isOpen && type == "signup";
@@ -89,11 +90,11 @@ const SignupModal = () => {
               />
 
               <div className="flex items-center justify-center mt-2">
-                <button className="border-[2px] border-white px-10 py-1 rounded-3xl flex items-center justify-center">
-                  <span className="text-[17px] text-white font-bold flex items-center justify-center">
+                <Button  variant={`login`} className="  bg-red-700 px-10 py-1 text-white">
+                  <span className="text-[17px]  font-bold text-center">
                     Signup
                   </span>
-                </button>
+                </Button>
               </div>
             </div>
           </form>

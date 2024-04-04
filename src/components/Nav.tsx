@@ -8,7 +8,7 @@ const Nav = () => {
   const {onOpen} = useModal();
   return (
     <>
-      <nav className="flex justify-between bg-[#140DBD] py-1 pl-7 pr-[10%]">
+      <nav className="flex items-center justify-between bg-[#140DBD] py-1 pl-7 pr-[10%]">
         <Link to={`/`}>
         <span className="text-2xl text-white font-bold"  >BUHREC</span>
         </Link>

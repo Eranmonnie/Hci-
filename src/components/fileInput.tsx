@@ -1,4 +1,5 @@
 import { FC, useRef } from "react";
+import { Input } from "./ui/input";
 interface dropDownProp {
   onChange: Function;
 }
@@ -10,6 +11,7 @@ const FileInput: FC<dropDownProp> = ({ onChange }) => {
     const file = event.target.files[0];
     if (file) {
       if (file.type === "application/pdf") {
+        console.log(file)
         onChange(file);
       } else {
         console.log("errrrr");
@@ -18,23 +20,16 @@ const FileInput: FC<dropDownProp> = ({ onChange }) => {
     }
   };
 
-  const handleClick = () => {
-    fileInputRef.current.click();
-  };
-
   return (
     <>
-      <div className="px-8 py-7 border border-black border-dashed rounded-xl w-[145px] flex justify-center items-center flex-col">
-        <img src="src/assets/upload.svg" alt="upload" className="w-[55px]" />
-        <label htmlFor="fileInput" onClick={handleClick}>
-          <div style={{ cursor: "pointer" }}>Browse</div>
-        </label>
-        <input
+      <div className=" py-5  ">
+        <Input
+          className="w-full"
           type="file"
-          className="hidden"
-          ref={fileInputRef}
           accept=".pdf"
+          ref={fileInputRef}
           onChange={handleFileChange}
+          placeholder="Email"
         />
       </div>
     </>

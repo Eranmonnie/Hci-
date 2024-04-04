@@ -3,6 +3,7 @@ import InputField from "@/components/inputField";
 import { useModal } from "@/hooks/use-modal-store";
 import { X } from "lucide-react";
 import { Dialog, DialogContent } from "../ui/dialog";
+import { Button } from "../ui/button";
 
 const LoginModal = () => {
   const { isOpen, onClose, type } = useModal();
@@ -60,12 +61,12 @@ const LoginModal = () => {
               </div>
               <h5 className="text-right text-[11px] mt-1">forgot password ?</h5>
 
-              <div className="flex items-center justify-center mt-2 bg-[#140DBD]">
-                <button className="border-[2px] border-white px-10 py-1 rounded-3xl flex items-center justify-center">
-                  <span className="text-[17px] text-white font-bold flex items-center justify-center">
+              <div className="flex items-center justify-center mt-2">
+                <Button  variant={`login`} className=" bg-red-700 px-10 py-1 text-white">
+                  <span className="text-[17px]  font-bold text-center">
                     Login
                   </span>
-                </button>
+                </Button>
               </div>
             </div>
           </form>

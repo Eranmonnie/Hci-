@@ -15,7 +15,7 @@ const SideNav = ({ accountType }: SidebarParams) => {
   const {onOpen} = useModal()
   return (
     <div className="h-full">
-      <div className="w-[55px] h-full bg-[#140DBD] flex flex-col gap-5 pt-4 border-t border-t-white">
+      <div className="w-[55px] h-full bg-[#140DBD] flex flex-col gap-5 pt-4 border-t border-t-white fixed inset-y-10">
         <ScrollArea className="flex-1 w-full">
           {accountType == "1" && (
             <div>

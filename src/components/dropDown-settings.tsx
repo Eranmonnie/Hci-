@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { Settings, Trash, Wrench } from "lucide-react";
+import { EyeIcon, Settings, Trash, Wrench } from "lucide-react";
 const DropdownSettings = () => {
   return (
     <div>
@@ -22,6 +22,10 @@ const DropdownSettings = () => {
         <DropdownMenuContent side="left">
           <DropdownMenuLabel>Settings</DropdownMenuLabel>
           <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <EyeIcon className="mr-2 h-4 w-4" />
+            <span>view</span>
+          </DropdownMenuItem>
           <DropdownMenuItem>
             <Wrench className="mr-2 h-4 w-4" />
             <span>Edit</span>
