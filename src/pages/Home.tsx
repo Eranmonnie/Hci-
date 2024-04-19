@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import Nav from "@/components/nav";
+import Nav from "@/components/Nav";
 import { Link } from "react-router-dom";
 import { ModalProvider } from "@/components/providers/modal-providers";
 
